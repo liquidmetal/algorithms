@@ -1,0 +1,2 @@
+all:
+	./solution.py
