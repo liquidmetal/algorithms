@@ -49,5 +49,9 @@ class BinaryTreeTests(unittest.TestCase):
         out = self.balanced_tree.traversal_level_order()
         self.assertEquals(out, "hdibejmacfgklno")
 
+    def test_traversal_inorder(self):
+        out = self.balanced_tree.traversal_inorder()
+        self.assertEquals(out, "abcdfeghkjlinmo")
+
     def test_leaf_count(self):
         self.assertEqual(self.balanced_tree.leaf_count(), 8)

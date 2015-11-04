@@ -48,6 +48,26 @@ class BinaryTree(object):
 
         return ret
 
+    def traversal_inorder(self):
+        ret = ""
+        stack = []
+        current = self.root
+
+        done = False
+        while not done:
+            if current:
+                stack.append(current)
+                current = current._left
+            else:
+                if len(stack) > 0:
+                    current = stack.pop()
+                    ret += current.value
+                    current = current._right
+                else:
+                    done = True
+
+        return ret
+
     def leaf_count(self):
         def _recurse(root):
             if not root.get_left() and not root.get_right():
@@ -56,3 +76,4 @@ class BinaryTree(object):
             return _recurse(root.get_left()) + _recurse(root.get_right())
 
         return _recurse(self.root)
+
