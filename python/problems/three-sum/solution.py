@@ -24,9 +24,13 @@ def three_sum(nums, e):
                 # Skip duplicates
                 while nums[j] == nums[j-1]:
                     j += 1
+                    if j == len(nums):
+                        break
 
                 while nums[k] == nums[k+1]:
                     k -= 1
+                    if k == 0:
+                        break
 
     return result
 
